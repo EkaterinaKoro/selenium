@@ -56,8 +56,8 @@ public class applicationСardTest {
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+788800099988");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
         driver.findElement(By.className("button")).click();
-        String expected = "в поле телефон неверно валидирует номер телефона и отображает более 11 цифр";
-        String actual = driver.findElement(By.cssSelector("[data-test-id='phone'].input__box")).getText().trim();
+        String expected = "Телефон указан неверно. Должно быть 11 цифр, например, +79012345678.";
+        String actual = driver.findElement(By.cssSelector("[data-test-id='phone'] .input__sub")).getText().trim();
         assertEquals(expected, actual);
     }
 
@@ -67,7 +67,7 @@ public class applicationСardTest {
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79625013494");
         driver.findElement(By.className("button")).click();
         String expected = "Я соглашаюсь с условиями обработки и использования моих персональных данных и разрешаю сделать запрос в бюро кредитных историй";
-        String actual = driver.findElement(By.cssSelector("[data-test-id='agreement'].input_invalid.checkbox__text")).getText().trim();
+        String actual = driver.findElement(By.cssSelector("[data-test-id='agreement'].input_invalid .checkbox__text")).getText().trim();
         assertEquals(expected, actual);
     }
 
