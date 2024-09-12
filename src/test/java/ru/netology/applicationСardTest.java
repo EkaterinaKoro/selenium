@@ -28,7 +28,6 @@ public class applicationСardTest {
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
         driver = new ChromeDriver();
-        ;
         driver.get("http://localhost:9999");
     }
 
